@@ -1,5 +1,4 @@
 use std::collections::HashSet;
-use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 pub fn part1() {
@@ -109,7 +108,7 @@ pub fn part2() {
     println!("{sum}");
 }
 
-fn read_schematic(input: File) -> Vec<Vec<Node>> {
+fn read_schematic(input: std::fs::File) -> Vec<Vec<Node>> {
     let extra_node = Node::new('.');
     let mut schematic: Vec<Vec<Node>> = Vec::new();
     for line in BufReader::new(input).lines() {
